@@ -82,3 +82,26 @@ div {
 label {
   display: block;
 }
+
+#confirmationDialog {
+  width: 220px;
+  height: 110px;
+  margin: 0 auto;
+  border: 1px solid #000;
+  background: #fff;
+  position: fixed;
+  top: 200px;
+  border-radius: 3px;
+  overflow-y: hidden !important;
+  .blank-post {
+    margin-left: 197px;
+  }
+  .modal-body {
+    font-size: 15px;
+    text-align: center;
+    padding-top: 25px;
+  }
+  .modal-footer {
+    border-top: none !important;
+  }
+}

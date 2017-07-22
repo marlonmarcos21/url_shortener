@@ -14,19 +14,37 @@
     $(document).ready(function() {
       $('#submit-shorten').click(function(event) {
         event.preventDefault();
-        $.get($(this).attr('href') + "?url=" + $('#shortened_url_url').val(), function(data) {} );
-        $('#google-api-data-container').empty();
+        if ($('#shortened_url_url').val().trim() === '') {
+          urlValidationModal();
+        } else {
+          $.get($(this).attr('href') + "?url=" + $('#shortened_url_url').val(), function(data) {} );
+          $('#google-api-data-container').empty();
+        }
       });
 
       $('#submit-expand').click(function(event) {
         event.preventDefault();
-        $.get($(this).attr('href') + "?url=" + $('#shortened_url_url').val(), function(data) {} );
-        $('#google-api-data-container').empty();
+        if ($('#shortened_url_url').val().trim() === '') {
+          urlValidationModal();
+        } else {
+          $.get($(this).attr('href') + "?url=" + $('#shortened_url_url').val(), function(data) {} );
+          $('#google-api-data-container').empty();
+        }
       });
 
       $('#submit-public-analytics').click(function(event) {
         event.preventDefault();
-        $.get($(this).attr('href') + "?url=" + $('#shortened_url_url').val(), function(data) {} );
-        $('#google-api-data-container').empty();
+        if ($('#shortened_url_url').val().trim() === '') {
+          urlValidationModal();
+        } else {
+          $.get($(this).attr('href') + "?url=" + $('#shortened_url_url').val(), function(data) {} );
+          $('#google-api-data-container').empty();
+        }
       });
+
+      function urlValidationModal() {
+        html = '<div class="modal" id="confirmationDialog"><a data-dismiss="modal" class="blank-post btn btn-default btn-xs">×</a><div class="modal-body"><p>URL can\'t be blank!</p></div></div>';
+        $(html).modal();
+        return false;
+      }
     });

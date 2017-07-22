@@ -1,10 +1,17 @@
+html {
+  position: relative;
+  min-height: 100%;
+
+}
+
 body {
   background-color: #fff;
   color: #333;
-  margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  height: 100%;
+  // margin-bottom: 33px 33px 60px 33px;
 }
 
 p, ol, ul, td {
@@ -44,6 +51,21 @@ div {
   &.field, &.actions {
     margin-bottom: 10px;
   }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 24px;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+#google-api-data-container {
+  height: auto;
+  padding-bottom: 60px;
 }
 
 #notice {

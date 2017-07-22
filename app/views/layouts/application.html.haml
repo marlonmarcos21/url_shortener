@@ -13,7 +13,9 @@
     = yield(:header_scripts) if content_for?(:header_scripts)
 
   %body#page-top
-    = yield
+    .container.content-section
+      .col-lg-12.col-md-12
+        = yield
 
     %footer
       .container.text-center

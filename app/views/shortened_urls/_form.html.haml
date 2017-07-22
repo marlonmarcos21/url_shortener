@@ -1,13 +1,16 @@
-%h1 Google URL Shortener
+%h1.text-center Google URL Shortener
 
 = simple_form_for :shortened_url, html: { class: 'form-horizontal' } do |f|
-  = f.input :url, label: 'URL'
+  .row-fluid
+    .col-lg-8.col-md-8.col-lg-offset-3.col-md-offset-3
+      = f.input :url, label: false, placeholder: 'https://www.google.com', wrapper: :horizontal_form
 
-  .form-actions
-    = link_to 'Shorten', shorten_url_shortened_urls_path, id: 'submit-shorten', class: 'btn btn-default'
-    = link_to 'Expand', expand_url_shortened_urls_path, id: 'submit-expand', class: 'btn btn-default'
-    = link_to 'Analytics', analytics_shortened_urls_path, id: 'submit-public-analytics', class: 'btn btn-default'
-    = link_to 'User History', user_history_shortened_urls_path, class: 'btn btn-default'
+  .row-fluid
+    .col-lg-8.col-md-8.col-lg-offset-3.col-md-offset-3
+      = link_to 'Shorten', shorten_url_shortened_urls_path, id: 'submit-shorten', class: 'btn btn-default'
+      = link_to 'Expand', expand_url_shortened_urls_path, id: 'submit-expand', class: 'btn btn-default'
+      = link_to 'Analytics', analytics_shortened_urls_path, id: 'submit-public-analytics', class: 'btn btn-default'
+      = link_to 'User History', user_history_shortened_urls_path, class: 'btn btn-default'
 
 - content_for :footer_scripts do
   :javascript

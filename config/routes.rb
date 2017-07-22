@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :shortened_urls, only: :index do
+    collection do
+      get 'shorten_url'
+      get 'expand_url'
+      get 'public_analytics'
+    end
+  end
+
+  root to: 'shortened_urls#index'
 end

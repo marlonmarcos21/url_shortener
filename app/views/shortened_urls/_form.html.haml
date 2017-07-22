@@ -1,0 +1,29 @@
+= simple_form_for :shortened_url, html: { class: 'form-horizontal posts' } do |f|
+  = f.input :url, label: 'URL'
+
+  .form-actions
+    = link_to 'Shorten', shorten_url_shortened_urls_path, id: 'submit-shorten', class: 'btn btn-default'
+    = link_to 'Expand', expand_url_shortened_urls_path, id: 'submit-expand', class: 'btn btn-default'
+    = link_to 'Public Analytics', public_analytics_shortened_urls_path, id: 'submit-public-analytics', class: 'btn btn-default'
+
+- content_for :footer_scripts do
+  :javascript
+    $(document).ready(function() {
+      $('#submit-shorten').click(function(event) {
+        event.preventDefault();
+        $.get($(this).attr('href') + "?url=" + $('#shortened_url_url').val(), function(data) {} );
+        $('#google-api-data-container').empty();
+      });
+
+      $('#submit-expand').click(function(event) {
+        event.preventDefault();
+        $.get($(this).attr('href') + "?url=" + $('#shortened_url_url').val(), function(data) {} );
+        $('#google-api-data-container').empty();
+      });
+
+      $('#submit-public-analytics').click(function(event) {
+        event.preventDefault();
+        $.get($(this).attr('href') + "?url=" + $('#shortened_url_url').val(), function(data) {} );
+        $('#google-api-data-container').empty();
+      });
+    });

@@ -1,0 +1,3 @@
+$('#google-api-data-container').append("<%= escape_javascript(render('shortened_url', data: @data)) %>");
+$('#google-api-data-container').append("<%= escape_javascript(render('expanded_url', data: @data)) %>");
+$('#google-api-data-container').append("<%= escape_javascript(render('public_analytics', data: @data)) %>");

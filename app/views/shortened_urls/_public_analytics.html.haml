@@ -1,0 +1,8 @@
+%div Analytics:
+%table
+  - @data['analytics'].each_key do |key|
+    %tr
+      %td= key
+      %td
+        %pre
+          = @data['analytics'][key].to_yaml

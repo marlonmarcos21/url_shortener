@@ -1,0 +1,399 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyCYEmxlWS-nWpU0Q1jcs4TF9oi2JsClQNI
+    body:
+      encoding: UTF-8
+      string: '{"longUrl":"https://www.google.com.sg"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Sat, 22 Jul 2017 06:14:43 GMT
+      Etag:
+      - '"qQqhpr1RL6vGc3-0yacNoUjh_Uc/wcD2UXg0O4vFj3P3JlfmIO7arOI"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="39,38,37,36,35"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+         "kind": "urlshortener#url",
+         "id": "https://goo.gl/ssxgl",
+         "longUrl": "https://www.google.com.sg/"
+        }
+    http_version: 
+  recorded_at: Sat, 22 Jul 2017 06:14:43 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyCYEmxlWS-nWpU0Q1jcs4TF9oi2JsClQNI&shortUrl=https://goo.gl/ssxgl
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Sat, 22 Jul 2017 06:18:25 GMT
+      Date:
+      - Sat, 22 Jul 2017 06:13:25 GMT
+      Etag:
+      - '"qQqhpr1RL6vGc3-0yacNoUjh_Uc/J-S29pzh5PyznsrCpNTfz8Sq4hw"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '122'
+      Server:
+      - GSE
+      Cache-Control:
+      - public, max-age=300, must-revalidate, no-transform
+      Age:
+      - '78'
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="39,38,37,36,35"
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "urlshortener#url",
+         "id": "https://goo.gl/ssxgl",
+         "longUrl": "https://www.google.com.sg/",
+         "status": "OK"
+        }
+    http_version: 
+  recorded_at: Sat, 22 Jul 2017 06:14:43 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyCYEmxlWS-nWpU0Q1jcs4TF9oi2JsClQNI&shortUrl=https://invalid-url.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Sat, 22 Jul 2017 06:14:44 GMT
+      Expires:
+      - Sat, 22 Jul 2017 06:14:44 GMT
+      Cache-Control:
+      - private, max-age=0
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="39,38,37,36,35"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+         "error": {
+          "errors": [
+           {
+            "domain": "global",
+            "reason": "invalid",
+            "message": "Invalid Value",
+            "locationType": "parameter",
+            "location": "shortUrl"
+           }
+          ],
+          "code": 400,
+          "message": "Invalid Value"
+         }
+        }
+    http_version: 
+  recorded_at: Sat, 22 Jul 2017 06:14:44 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyCYEmxlWS-nWpU0Q1jcs4TF9oi2JsClQNI&projection=FULL&shortUrl=https://goo.gl/ssxgl
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Sat, 22 Jul 2017 06:18:41 GMT
+      Date:
+      - Sat, 22 Jul 2017 06:18:41 GMT
+      Cache-Control:
+      - public, max-age=0, must-revalidate, no-transform
+      Etag:
+      - '"qQqhpr1RL6vGc3-0yacNoUjh_Uc/xNQ8WO3PQVlTPEgczcku1PnqUUo"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '1607'
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="39,38,37,36,35"
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "urlshortener#url",
+         "id": "https://goo.gl/ssxgl",
+         "longUrl": "https://www.google.com.sg/",
+         "status": "OK",
+         "created": "2012-02-17T07:01:43.097+00:00",
+         "analytics": {
+          "allTime": {
+           "shortUrlClicks": "42",
+           "longUrlClicks": "66",
+           "referrers": [
+            {
+             "count": "41",
+             "id": "unknown"
+            },
+            {
+             "count": "1",
+             "id": "url.arkar.net"
+            }
+           ],
+           "countries": [
+            {
+             "count": "37",
+             "id": "SG"
+            },
+            {
+             "count": "2",
+             "id": "TH"
+            },
+            {
+             "count": "1",
+             "id": "CN"
+            },
+            {
+             "count": "1",
+             "id": "ID"
+            },
+            {
+             "count": "1",
+             "id": "US"
+            }
+           ],
+           "browsers": [
+            {
+             "count": "23",
+             "id": "Chrome"
+            },
+            {
+             "count": "9",
+             "id": "MSIE"
+            },
+            {
+             "count": "4",
+             "id": "Mobile Safari"
+            },
+            {
+             "count": "2",
+             "id": "Firefox"
+            },
+            {
+             "count": "2",
+             "id": "Safari"
+            },
+            {
+             "count": "1",
+             "id": "CriOS"
+            },
+            {
+             "count": "1",
+             "id": "Mobile"
+            }
+           ],
+           "platforms": [
+            {
+             "count": "25",
+             "id": "Windows"
+            },
+            {
+             "count": "8",
+             "id": "Linux"
+            },
+            {
+             "count": "7",
+             "id": "Macintosh"
+            },
+            {
+             "count": "1",
+             "id": "iPad"
+            },
+            {
+             "count": "1",
+             "id": "iPhone"
+            }
+           ]
+          },
+          "month": {
+           "shortUrlClicks": "0",
+           "longUrlClicks": "0"
+          },
+          "week": {
+           "shortUrlClicks": "0",
+           "longUrlClicks": "0"
+          },
+          "day": {
+           "shortUrlClicks": "0",
+           "longUrlClicks": "0"
+          },
+          "twoHours": {
+           "shortUrlClicks": "0",
+           "longUrlClicks": "0"
+          }
+         }
+        }
+    http_version: 
+  recorded_at: Sat, 22 Jul 2017 06:18:41 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyCYEmxlWS-nWpU0Q1jcs4TF9oi2JsClQNI&projection=FULL&shortUrl=https://invalid-url.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Sat, 22 Jul 2017 06:18:41 GMT
+      Expires:
+      - Sat, 22 Jul 2017 06:18:41 GMT
+      Cache-Control:
+      - private, max-age=0
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="39,38,37,36,35"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+         "error": {
+          "errors": [
+           {
+            "domain": "global",
+            "reason": "invalid",
+            "message": "Invalid Value",
+            "locationType": "parameter",
+            "location": "shortUrl"
+           }
+          ],
+          "code": 400,
+          "message": "Invalid Value"
+         }
+        }
+    http_version: 
+  recorded_at: Sat, 22 Jul 2017 06:18:41 GMT
+recorded_with: VCR 3.0.3

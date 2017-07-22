@@ -44,6 +44,10 @@ group :development, :test do
   gem 'pry-rails'
   gem 'dotenv-rails'
   gem 'awesome_print'
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
+  gem 'vcr'
+  gem 'webmock'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'

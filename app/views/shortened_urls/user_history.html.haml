@@ -1,0 +1,20 @@
+= render 'form'
+
+%div User History:
+- if @data['items']
+  - @data['items'].each do |item|
+    %pre
+      %table
+        %tr
+          %td Short URL:
+          %td= item['id']
+        %tr
+          %td Long URL:
+          %td= item['longUrl']
+        %tr
+          %td Created:
+          %td= item['created']
+- else
+  %p
+    No history found, please visit 
+    = link_to 'https://goo.gl', 'https://goo.gl'

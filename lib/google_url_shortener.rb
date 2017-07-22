@@ -1,7 +1,8 @@
 # I would have used googl gem (https://github.com/zigotto/googl)
 # But I wanted to make it more fun & challenging so I implemented my own :)
 class GoogleUrlShortener
-  API_URL = 'https://www.googleapis.com/urlshortener/v1/url'.freeze
+  API_URL   = 'https://www.googleapis.com/urlshortener/v1/url'.freeze
+  SCOPE_URL = 'https://www.googleapis.com/auth/urlshortener'.freeze
 
   attr_reader :api_key
   attr_reader :uri
@@ -31,6 +32,16 @@ class GoogleUrlShortener
   # but with analytics data added in the response
   def shortened_url_analytics(short_url)
     response = expand_url_request(short_url, true)
+    get_api_response(response)
+  end
+
+  def user_history(access_token)
+    header = { "Authorization" => "OAuth #{access_token}" }
+    history_uri = uri.dup
+    history_uri.path = "#{history_uri.path}/history"
+    history_uri.query = "#{history_uri.query}&shortUrl="
+    request = Net::HTTP::Get.new("#{history_uri.request_uri}", header)
+    response = net_http.request(request)
     get_api_response(response)
   end
 

@@ -1,10 +1,13 @@
-= simple_form_for :shortened_url, html: { class: 'form-horizontal posts' } do |f|
+%h1 Google URL Shortener
+
+= simple_form_for :shortened_url, html: { class: 'form-horizontal' } do |f|
   = f.input :url, label: 'URL'
 
   .form-actions
     = link_to 'Shorten', shorten_url_shortened_urls_path, id: 'submit-shorten', class: 'btn btn-default'
     = link_to 'Expand', expand_url_shortened_urls_path, id: 'submit-expand', class: 'btn btn-default'
     = link_to 'Public Analytics', public_analytics_shortened_urls_path, id: 'submit-public-analytics', class: 'btn btn-default'
+    = link_to 'User History', user_history_shortened_urls_path, class: 'btn btn-default'
 
 - content_for :footer_scripts do
   :javascript

@@ -4,8 +4,11 @@ Rails.application.routes.draw do
       get 'shorten_url'
       get 'expand_url'
       get 'public_analytics'
+      get 'user_history'
     end
   end
+
+  get '/oauth2callback', to: 'shortened_urls#oauth2'
 
   root to: 'shortened_urls#index'
 end

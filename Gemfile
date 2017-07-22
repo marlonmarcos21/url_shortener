@@ -47,8 +47,6 @@ group :development, :test do
   gem 'awesome_print'
   gem 'rspec-rails'
   gem 'spring-commands-rspec'
-  gem 'vcr'
-  gem 'webmock'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
@@ -61,6 +59,14 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

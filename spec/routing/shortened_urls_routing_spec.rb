@@ -7,33 +7,16 @@ RSpec.describe ShortenedUrlsController, type: :routing do
       expect(:get => "/shortened_urls").to route_to("shortened_urls#index")
     end
 
-    it "routes to #new" do
-      expect(:get => "/shortened_urls/new").to route_to("shortened_urls#new")
+    it "routes to #shorten_url" do
+      expect(:get => "/shortened_urls/shorten_url").to route_to("shortened_urls#shorten_url")
     end
 
-    it "routes to #show" do
-      expect(:get => "/shortened_urls/1").to route_to("shortened_urls#show", :id => "1")
+    it "routes to #expand_url" do
+      expect(:get => "/shortened_urls/expand_url").to route_to("shortened_urls#expand_url")
     end
 
-    it "routes to #edit" do
-      expect(:get => "/shortened_urls/1/edit").to route_to("shortened_urls#edit", :id => "1")
+    it "routes to #public_analytics" do
+      expect(:get => "/shortened_urls/public_analytics").to route_to("shortened_urls#public_analytics")
     end
-
-    it "routes to #create" do
-      expect(:post => "/shortened_urls").to route_to("shortened_urls#create")
-    end
-
-    it "routes to #update via PUT" do
-      expect(:put => "/shortened_urls/1").to route_to("shortened_urls#update", :id => "1")
-    end
-
-    it "routes to #update via PATCH" do
-      expect(:patch => "/shortened_urls/1").to route_to("shortened_urls#update", :id => "1")
-    end
-
-    it "routes to #destroy" do
-      expect(:delete => "/shortened_urls/1").to route_to("shortened_urls#destroy", :id => "1")
-    end
-
   end
 end

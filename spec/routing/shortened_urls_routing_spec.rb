@@ -15,8 +15,8 @@ RSpec.describe ShortenedUrlsController, type: :routing do
       expect(:get => "/shortened_urls/expand_url").to route_to("shortened_urls#expand_url")
     end
 
-    it "routes to #public_analytics" do
-      expect(:get => "/shortened_urls/public_analytics").to route_to("shortened_urls#public_analytics")
+    it "routes to #analytics" do
+      expect(:get => "/shortened_urls/analytics").to route_to("shortened_urls#public_analytics")
     end
   end
 end

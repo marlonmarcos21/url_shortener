@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     collection do
       get 'shorten_url'
       get 'expand_url'
-      get 'public_analytics'
+      get 'analytics'
       get 'user_history'
     end
   end

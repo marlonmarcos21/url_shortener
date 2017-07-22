@@ -1,5 +1,3 @@
-= render 'form'
-
 %div User History:
 - if @data['items']
   - @data['items'].each do |item|
@@ -18,3 +16,5 @@
   %p
     No history found, please visit 
     = link_to 'https://goo.gl', 'https://goo.gl'
+
+%div.center= link_to 'Back', root_path

@@ -25,7 +25,7 @@ class ShortenedUrlsController < ApplicationController
     respond_to :js
   end
 
-  def public_analytics
+  def analytics
     @data = google_url_shortener.shortened_url_analytics(params[:url])
     respond_to :js
   end

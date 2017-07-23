@@ -12,8 +12,7 @@ class ShortenedUrlsController < ApplicationController
     end
     respond_to :js
   rescue StandardError => error
-    err = JSON.load(error.message)
-    @err_msg = err['error']['message']
+    set_error_message(error)
   end
 
   def expand_url
@@ -26,16 +25,14 @@ class ShortenedUrlsController < ApplicationController
     end
     respond_to :js
   rescue StandardError => error
-    err = JSON.load(error.message)
-    @err_msg = err['error']['message']
+    set_error_message(error)
   end
 
   def analytics
     @data = google_url_shortener.shortened_url_analytics(params[:url])
     respond_to :js
   rescue StandardError => error
-    err = JSON.load(error.message)
-    @err_msg = err['error']['message']
+    set_error_message(error)
   end
 
   # Using cookies here might not the best option
@@ -71,5 +68,10 @@ class ShortenedUrlsController < ApplicationController
       ENV['GOOGLE_REDIRECT_URI'],
       GoogleUrlShortener::SCOPE_URL
     )
+  end
+
+  def set_error_message(error)
+    err = JSON.load(error.message)
+    @err_msg = err['error']['message']
   end
 end

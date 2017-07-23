@@ -23,7 +23,7 @@ p, ol, ul, td {
 pre {
   background-color: #eee;
   padding: 10px;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 a {
@@ -64,8 +64,12 @@ footer {
 }
 
 #google-api-data-container {
+  margin-top: 20px;
   height: auto;
   padding-bottom: 60px;
+  table, tr, td, div {
+    font-size: 16px;
+  }
 }
 
 #notice {
@@ -125,5 +129,23 @@ label {
   }
   .modal-footer {
     border-top: none !important;
+  }
+}
+
+.btn {
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.btn-default {
+  border: 1px solid #f5f5f5;
+  color: #555;
+  &:hover,
+  &:focus {
+    border: 1px solid #428bca;
+    outline: none;
+    color: #fff;
+    background-color: #428bca;
   }
 }

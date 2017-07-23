@@ -5,10 +5,10 @@
       %table
         %tr
           %td Short URL:
-          %td= item['id']
+          %td= link_to item['id'], item['id']
         %tr
           %td Long URL:
-          %td= item['longUrl']
+          %td= link_to item['longUrl'], item['longUrl']
         %tr
           %td Created:
           %td= item['created']

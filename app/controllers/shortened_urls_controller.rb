@@ -1,6 +1,5 @@
 class ShortenedUrlsController < ApplicationController
   def index
-    @google_auth_url = google_oauth2.authorization_url
   end
 
   def shorten_url

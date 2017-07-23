@@ -1,24 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Clone:
 
-Things you may want to cover:
+```
+git clone https://github.com/marlonmarcos21/url_shortener.git
+```
 
-* Ruby version
+### Setup:
 
-* System dependencies
+* Execute bundle install:
 
-* Configuration
+```
+bundle install
+```
 
-* Database creation
+* Setup Database (App is using postgres, change to your preferred database if needed)
 
-* Database initialization
+```
+bundle exec rake db:setup
+```
 
-* How to run the test suite
+* Create `.env` file
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+cp .env.example .env
+```
 
-* Deployment instructions
+* Create google API key and OAuth Client ID [here](https://console.developers.google.com/apis/credentials)
 
-* ...
+* Sample APP can be found [here](https://pocketmath.gravity.ph)
+
+### Run tests:
+
+```
+bundle exec rspec
+```

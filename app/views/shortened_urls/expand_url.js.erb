@@ -1,1 +1,6 @@
-$('#google-api-data-container').append("<%= escape_javascript(render('expanded_url', data: @data)) %>");
+<% if @data %>
+  $('#google-api-data-container').append("<%= escape_javascript(render('expanded_url', data: @data)) %>");
+<% else %>
+  var html = "<div class=\"modal\" id=\"confirmationDialog\"><a data-dismiss=\"modal\" class=\"close-btn btn btn-default btn-xs\">×</a><div class=\"modal-body\"><p><%= @err_msg %></p></div></div>";
+  $(html).modal();
+<% end %>

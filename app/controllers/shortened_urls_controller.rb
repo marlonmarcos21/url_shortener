@@ -11,6 +11,9 @@ class ShortenedUrlsController < ApplicationController
       ShortenedUrl.create_from_google_data(@data)
     end
     respond_to :js
+  rescue StandardError => error
+    err = JSON.load(error.message)
+    @err_msg = err['error']['message']
   end
 
   def expand_url
@@ -22,11 +25,17 @@ class ShortenedUrlsController < ApplicationController
       ShortenedUrl.create_from_google_data(@data)
     end
     respond_to :js
+  rescue StandardError => error
+    err = JSON.load(error.message)
+    @err_msg = err['error']['message']
   end
 
   def analytics
     @data = google_url_shortener.shortened_url_analytics(params[:url])
     respond_to :js
+  rescue StandardError => error
+    err = JSON.load(error.message)
+    @err_msg = err['error']['message']
   end
 
   # Using cookies here might not the best option

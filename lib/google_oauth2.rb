@@ -1,4 +1,6 @@
 # Custom library to implement google oauth2
+require 'net/http'
+
 class GoogleOauth2
   OAUTH_URL = 'https://accounts.google.com/o/oauth2/auth'.freeze
   TOKEN_URL = 'https://accounts.google.com/o/oauth2/token'.freeze

@@ -1,5 +1,7 @@
 # I would have used googl gem (https://github.com/zigotto/googl)
 # But I wanted to make it more fun & challenging so I implemented my own :)
+require 'net/http'
+
 class GoogleUrlShortener
   API_URL   = 'https://www.googleapis.com/urlshortener/v1/url'.freeze
   SCOPE_URL = 'https://www.googleapis.com/auth/urlshortener'.freeze

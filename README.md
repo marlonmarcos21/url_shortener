@@ -28,7 +28,7 @@ cp .env.example .env
 
 * Create google API key and OAuth Client ID [here](https://console.developers.google.com/apis/credentials)
 
-* Sample APP can be found [here](https://pocketmath.gravity.ph)
+* Sample APP can be found [here](https://url-shortener.gravity.ph)
 
 ### Run tests:
 
